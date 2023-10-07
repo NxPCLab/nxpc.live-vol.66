@@ -3,7 +3,7 @@
 <div id="app">
 
     <head>
-        <title>NxPC.vol65 流せ、ソ~~~メン</title>
+        <title>NxPC.vol66 キョクメン</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <script type="module" src="./js/script.js"></script>
@@ -28,13 +28,13 @@
     <body>
         <div class="keyvisual-container">
             <span class="toptitle">
-                NxPC.live Vol.65:
+                NxPC.live Vol.66:
                 <br>
-                流せ、ソ~~~メン
+                キョクメン
                 <br>
-                7/22(土) 7/23(日) open 17:00~
+                10/21(土) open 13:00~
                 <br>
-                Venue: ソフトピアセンタビル 4F ギャラリー
+                Venue: やしまーる
             </span>
             <div class="script-container">
                 <!-- back ground video -->
@@ -52,23 +52,12 @@
                         z-index: -3;
                         ">
             </div>
-            <svg width="100vw" height="100vh" version="1.1" xmlns="http://www.w3.org/2000/svg">
-
-                <line x1="10" x2="50" y1="110" y2="150" stroke="orange" stroke-width="5" />
-                <polyline points="60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 145" stroke="orange"
-                    fill="transparent" stroke-width="5" />
-
-                <polygon points="50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180" stroke="green"
-                    fill="transparent" stroke-width="5" />
-
-                <path d="M20,230 Q40,205 50,230 T90,230" fill="none" stroke="blue" stroke-width="5" />
-            </svg>
-            <canvas id="canvas" >
+            <canvas id="canvas">
                 <script>
                     const canvas = document.getElementById("canvas");
                     const ctx = canvas.getContext("2d");
-    
-                    ctx.fillStyle = "blue";
+
+                    ctx.fillStyle = (10, 10, 100, 100);
                     ctx.fillRect(10, 10, 100, 100);
                 </script>
             </canvas>
