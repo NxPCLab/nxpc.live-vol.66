@@ -20,7 +20,9 @@ function setup() {
 
 function draw() {
   window.onresize = () => resizeCanvas(windowWidth, windowHeight);
-  background('rgba(0,0,0,0.0)');
+  //background('rgba(0,0,0,0.0)');
+  background(60);
+
 
   for (j = 0; j < height; j += height / lineNum) {
     // 一周期の波形を描画
