@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<div id="app">
+
+    <head>
+        <title>NxPC.vol65 流せ、ソ~~~メン</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script type="module" src="./js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+        <script src="./js/p5.func.min.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <link rel="icon" href="img/logo/logo.png" />
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chivo+Mono&family=DotGothic16&family=IBM+Plex+Mono&family=JetBrains+Mono&family=Nanum+Myeongjo&family=Zen+Antique&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="keyvisual-container">
+            <span class="toptitle">
+                NxPC.live Vol.65:
+                <br>
+                流せ、ソ~~~メン
+                <br>
+                7/22(土) 7/23(日) open 17:00~
+                <br>
+                Venue: ソフトピアセンタビル 4F ギャラリー
+            </span>
+            <div class="script-container">
+                <!-- back ground video -->
+                <main>
+                </main>
+                <script src="./js/sketch.js"></script>
+            </div>
+            <div class="keyvisual-defaults">
+                <img src="img/kyokumen_title.svg" style="
+                        display: block; width: 50vw; height: 50vh;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: -3;
+                        ">
+            </div>
+            <svg width="100vw" height="100vh" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+                <line x1="10" x2="50" y1="110" y2="150" stroke="orange" stroke-width="5" />
+                <polyline points="60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 145" stroke="orange"
+                    fill="transparent" stroke-width="5" />
+
+                <polygon points="50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180" stroke="green"
+                    fill="transparent" stroke-width="5" />
+
+                <path d="M20,230 Q40,205 50,230 T90,230" fill="none" stroke="blue" stroke-width="5" />
+            </svg>
+            <canvas id="canvas" >
+                <script>
+                    const canvas = document.getElementById("canvas");
+                    const ctx = canvas.getContext("2d");
+    
+                    ctx.fillStyle = "blue";
+                    ctx.fillRect(10, 10, 100, 100);
+                </script>
+            </canvas>
+            <div class="keyvisual-performer">
+                <div v-for="performer in performers" :index="performer.id">
+                    <a :href="`#${performer.name}`">{{ performer.name }}</a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a class="nav-elem" href="#info">Info</a>
+            <a class="nav-elem" href="#performer">Performer</a>
+            <a class="nav-elem" href="#about">About</a>
+            <a class="nav-elem" href="#top" id="goto-top">Top</a>
+            <script>
+                const toTop = document.querySelector("#goto-top");
+                toTop.addEventListener("click", () => {
+                    window.scrollTo(0, 0);
+                });
+            </script>
+        </nav>
+
+        <div id="info" class="sp-section">
+
+            <div class="grid-wrapper">
+                <div class="sub-section theme-color wide">
+                    <h1>About</h1>
+                    <!-- Aboutセクションのコンテンツをここに追加 -->
+                    <p class="para">
+                        NxPC.Labは、クラブやライブにおけるアーティストと観客の相互作用によってもたらされる場の臨場感を拡大し、ネットへも拡散させるためのメディアテクノロジーの実現を目指した研究機関です。
+                        <br><br>
+                        現代のメディア体験において必要とされる対話性、参加性をデバイス、インタフェース、ネットワークといったメディアテクノロジーを駆使することで、音楽体験を拡張し、音楽空間におけるコミュニケーションを次のステージへ導くための研究開発、イベントを実施しています。実験の場としてのイベントNxPC.Liveを中心に、レクチャーやワークショップ、ネットラジオなどの活動を行っています。
+                    </p>
+                </div>
+                <div class="sub-section theme-color slim">
+                    <h1>Info</h1>
+                    <p>
+                        開催日時: 7/22,7/23両日開催
+                    </p>
+                </div>
+                <div class="sub-section theme-color medium">
+                    <h2>Access</h2>
+                    <p>
+                        会場：やしまーる 香川県高松市屋島東町1784-6
+                    </p>
+                    <div class="map-container">
+                        <iframe class="map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.703154822184!2d134.09456873488767!3d34.358032200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35539339c6e7b745%3A0xb170af5bcd316a21!2z44KE44GX44G-44O844KL44Kr44OV44Kn!5e0!3m2!1sja!2sjp!4v1696649613488!5m2!1sja!2sjp"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                    </div>
+                </div>
+                <div class="sub-section theme-color medium">
+                    <h2>Timetable</h2>
+                    <table class="table text-white theme-color ">
+                        <thead>
+                            <tr class="t-head">
+                                <th scope="col" class="w-25-">Date</th>
+                                <th scope="col">2022.7.22 Sat.</th>
+                                <th scope="col">2022.7.23 Sun.</th>
+                            </tr>
+                        </thead>
+                        <tbody class="t-body">
+                            <tr>
+                                <th scope="row">Live Link</th>
+                                <td><a href="https://youtube.com/live/UbbT9o24LxA?feature=share">YouTube Live</a></td>
+                                <td><a href="https://youtube.com/live/BECzZidB2yc?feature=share">YouTube Live</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Open</th>
+                                <td>17:00</td>
+                                <td>17:00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Start</th>
+                                <td>17:30~</td>
+                                <td>17:30~</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Close</th>
+                                <td>20:00</td>
+                                <td>20:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="performer" class="sp-section">
+            <h1>Performer</h1>
+            <div class="performer-container">
+                <div v-for="performer in performers" :key="performer.id" class="performer-frame">
+                    <p :id="performer.name">{{ performer.name }}</p>
+                    <div class="performer-detail">
+                        <img :src="performer.image" alt="Performer Image">
+                        <p>{{performer.intro}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="footer-credit flex-horizontal">
+            <div class="credits">
+                <p>ビジュアル制作:</p>
+                <p>Jung Jieyun</p>
+                <p>Haruto Tokubo</p>
+                <br>
+                <p>Web制作:</p>
+                <p>Santa Naruse</p>
+                <p>Taichi Matsumoto</p>
+            </div>
+            <div class="credits">
+                <p>出演者:</p>
+                <div v-for="performer in performers" :index="performer.id">
+                    <p>{{performer.name}}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</html>
