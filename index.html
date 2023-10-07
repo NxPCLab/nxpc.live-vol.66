@@ -10,7 +10,17 @@
         <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
         <script src="./js/p5.func.min.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <link rel="icon" href="img/logo/logo.png" />
+        <script>
+            (function (d) {
+                var config = {
+                    kitId: 'xwb5glo',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                    h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+            })(document);
+        </script>
+        <link rel="icon" href="./img/logo/logo.png" />
         <link rel="stylesheet" type="text/css" href="styles.css">
 
         <!-- Bootstrap CSS -->
@@ -27,15 +37,18 @@
 
     <body>
         <div class="keyvisual-container">
-            <span class="toptitle">
-                NxPC.live Vol.66:
-                <br>
-                キョクメン
-                <br>
-                10/21(土) open 13:00~
-                <br>
-                Venue: やしまーる
-            </span>
+            <div class="title">
+                <span class="toptitle">
+                    NxPC.live Vol.66
+                </span>
+            </div>
+            <div class="info">
+                <span class="topinfo">
+                    10/21(土) open 13:30~
+                    <br>
+                    @<a href="https://www.yashima-navi.jp/jp/yashimaru/">やしまーる</a>
+                </span>
+            </div>
             <div class="script-container">
                 <!-- back ground video -->
                 <main>
@@ -69,9 +82,8 @@
         </div>
 
         <nav class="nav-links">
-            <a class="nav-elem" href="#info">Info</a>
-            <a class="nav-elem" href="#performer">Performer</a>
             <a class="nav-elem" href="#about">About</a>
+            <a class="nav-elem" href="#performer">Performer</a>
             <a class="nav-elem" href="#top" id="goto-top">Top</a>
             <script>
                 const toTop = document.querySelector("#goto-top");
@@ -81,26 +93,22 @@
             </script>
         </nav>
 
-        <div id="info" class="sp-section">
+        <div id="about" class="sp-section">
 
             <div class="grid-wrapper">
                 <div class="sub-section theme-color wide">
                     <h1>About</h1>
                     <!-- Aboutセクションのコンテンツをここに追加 -->
+                    <br>
                     <p class="para">
                         NxPC.Labは、クラブやライブにおけるアーティストと観客の相互作用によってもたらされる場の臨場感を拡大し、ネットへも拡散させるためのメディアテクノロジーの実現を目指した研究機関です。
                         <br><br>
                         現代のメディア体験において必要とされる対話性、参加性をデバイス、インタフェース、ネットワークといったメディアテクノロジーを駆使することで、音楽体験を拡張し、音楽空間におけるコミュニケーションを次のステージへ導くための研究開発、イベントを実施しています。実験の場としてのイベントNxPC.Liveを中心に、レクチャーやワークショップ、ネットラジオなどの活動を行っています。
                     </p>
                 </div>
-                <div class="sub-section theme-color slim">
-                    <h1>Info</h1>
-                    <p>
-                        開催日時: 7/22,7/23両日開催
-                    </p>
-                </div>
                 <div class="sub-section theme-color medium">
                     <h2>Access</h2>
+                    <br>
                     <p>
                         会場：やしまーる 香川県高松市屋島東町1784-6
                     </p>
@@ -117,29 +125,68 @@
                         <thead>
                             <tr class="t-head">
                                 <th scope="col" class="w-25-">Date</th>
-                                <th scope="col">2022.7.22 Sat.</th>
-                                <th scope="col">2022.7.23 Sun.</th>
+                                <th scope="col">2023.10.21 Sat.</th>
                             </tr>
                         </thead>
                         <tbody class="t-body">
                             <tr>
-                                <th scope="row">Live Link</th>
-                                <td><a href="https://youtube.com/live/UbbT9o24LxA?feature=share">YouTube Live</a></td>
-                                <td><a href="https://youtube.com/live/BECzZidB2yc?feature=share">YouTube Live</a></td>
-                            </tr>
-                            <tr>
                                 <th scope="row">Open</th>
-                                <td>17:00</td>
-                                <td>17:00</td>
+                                <td>13:30</td>
                             </tr>
                             <tr>
                                 <th scope="row">Start</th>
-                                <td>17:30~</td>
-                                <td>17:30~</td>
+                                <td>14:00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">nami</th>
+                                <td>14:00~14:25</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">ピクニック・ディスコ</th>
+                                <td>14:30~14:55</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">oowets</th>
+                                <td>15:00~15:25</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">hoge</th>
+                                <td>15:30~15:55</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">hoge</th>
+                                <td>16:00~16:25</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">hoge</th>
+                                <td>16:30~16:55</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">hoge</th>
+                                <td>17:00~17:25</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">hoge</th>
+                                <td>17:30~17:55</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">税金操作</th>
+                                <td>18:00~18:25</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">葊 -iori-</th>
+                                <td>18:30~18:55</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">electric catfish</th>
+                                <td>19:00~19:25</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">hoge</th>
+                                <td>19:30~19:55</td>
                             </tr>
                             <tr>
                                 <th scope="row">Close</th>
-                                <td>20:00</td>
                                 <td>20:00</td>
                             </tr>
                         </tbody>
