@@ -78,12 +78,10 @@ body {
 .script-container {
   display: flex;
   width: 100vw;
-  height: 101vh;
+  height: 100vh;
   position: fixed;
   top: 0%;
   left: 0%;
-  justify-content: center;
-  align-items: center;
   z-index: -3;
 }
 
@@ -149,6 +147,7 @@ body {
   top: 0%;
   left: 0%;
   border: 0%;
+  
 }
 
 .keyvisual-container span {
