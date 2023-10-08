@@ -13,7 +13,6 @@ let speed = 0.2;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  pixelDensity(1);
   ease = new p5.Ease();
 
   for (j = 0; j < height; j += height / lineNum) {
