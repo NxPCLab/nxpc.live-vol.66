@@ -19,7 +19,6 @@ html {
 body {
   margin: 0;
   font-size: 100%;
-  background-color: gray;
 }
 
 .loading {
@@ -79,14 +78,13 @@ body {
 .script-container {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 101vh;
   position: fixed;
   top: 0%;
   left: 0%;
   justify-content: center;
   align-items: center;
   z-index: -3;
-  background-color: rgb(60, 60, 60);
 }
 
 .theme-color {

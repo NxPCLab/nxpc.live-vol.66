@@ -79,15 +79,6 @@
                         z-index: -3;
                         ">
             </div>
-            <canvas id="canvas">
-                <script>
-                    const canvas = document.getElementById("canvas");
-                    const ctx = canvas.getContext("2d");
-
-                    ctx.fillStyle = (10, 10, 100, 100);
-                    ctx.fillRect(10, 10, 100, 100);
-                </script>
-            </canvas>
             <div class="keyvisual-performer">
                 <div v-for="performer in performers" :index="performer.id">
                     <a :href="`#${performer.name}`">{{ performer.name }}</a>
