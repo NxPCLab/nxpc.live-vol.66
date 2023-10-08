@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=IHina+Mincho:wght@400;500&display=swap');
 
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
 html {
   overflow-x: hidden;
 }
@@ -7,7 +19,31 @@ html {
 body {
   margin: 0;
   font-size: 100%;
-  background-color: gray;
+}
+
+.loading {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(60, 60, 60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: PixelMplus12 Bold;
+  font-size: 1.5rem;
+}
+
+.loading.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+}
+
+.loading p {
+  font-family: "Major Mono Display", sans-serif;
+  animation: blink 150ms infinite;
 }
 
 .flex-align-center {
@@ -42,14 +78,13 @@ body {
 .script-container {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 101vh;
   position: fixed;
   top: 0%;
   left: 0%;
   justify-content: center;
   align-items: center;
   z-index: -3;
-  background-color: rgb(60, 60, 60);
 }
 
 .theme-color {
@@ -386,7 +421,10 @@ a:hover {
   right: 4vw;
   display: flex;
   gap: 5px;
+}
 
+.nav-links a:hover {
+  color: black;
 }
 
 .nav-elem {
@@ -445,4 +483,38 @@ footer {
   padding-right: 10px;
   display: block;
   line-height: 90%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    left: 0vw;
+  }
+
+  .title span {
+    font-size: 1.2rem;
+  }
+
+  .info {
+    left: 0vw;
+  }
+
+  .info p {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    right: 0vw;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .keyvisual-performer {
+    right: 0vw;
+  }
+
+  .keyvisual-performer a {
+    font-size: 0.9rem;
+  }
 }

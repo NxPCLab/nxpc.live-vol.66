@@ -1,8 +1,19 @@
+window.onload = function () {
+  // この中に、ローディングが完全に終わった後の処理を書く
+  console.log("ページのすべてのリソースが読み込まれました！");
+
+  // 例: ローディング画面を非表示にする
+  const loadingScreen = document.getElementById('loading');
+  if (loadingScreen) {
+    loadingScreen.style.display = 'none';
+  }
+};
+
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 
 const Intro = {
   props: {
-    text : String,
+    text: String,
     // root であるappのperformersのフィールドにアクセスする
   },
   data: () => ({
@@ -64,7 +75,7 @@ const app = createApp({
             console.log(pathId);
             if (this.imageExists(pathId + ".webp")) {
               this.performers[index].image = pathId + ".webp";
-            } 
+            }
             else if (this.imageExists(pathId + ".gif")) {
               this.performers[index].image = pathId + ".gif";
             }

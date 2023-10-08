@@ -47,6 +47,9 @@
     </head>
 
     <body>
+        <div class="loading" id="loading">
+            <p>Now loading...</p>
+        </div>
         <div class="keyvisual-container">
             <div class="title">
                 <span class="toptitle">
@@ -74,17 +77,9 @@
                         left: 50%;
                         transform: translate(-50%, -50%);
                         z-index: -3;
+                        min-width: 350px;
                         ">
             </div>
-            <canvas id="canvas">
-                <script>
-                    const canvas = document.getElementById("canvas");
-                    const ctx = canvas.getContext("2d");
-
-                    ctx.fillStyle = (10, 10, 100, 100);
-                    ctx.fillRect(10, 10, 100, 100);
-                </script>
-            </canvas>
             <div class="keyvisual-performer">
                 <div v-for="performer in performers" :index="performer.id">
                     <a :href="`#${performer.name}`">{{ performer.name }}</a>
@@ -124,10 +119,10 @@
                         会場：やしまーる 香川県高松市屋島東町1784-6
                     </p>
                     <div class="map-container">
-                        <iframe class="map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.703154822184!2d134.09456873488767!3d34.358032200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35539339c6e7b745%3A0xb170af5bcd316a21!2z44KE44GX44G-44O844KL44Kr44OV44Kn!5e0!3m2!1sja!2sjp!4v1696649613488!5m2!1sja!2sjp"
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.6938221877926!2d134.09643147662604!3d34.35826967304328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355393cf32ef102b%3A0x89cbab002cd20090!2z5bGL5bO25bGx5LiK5Lqk5rWB5oug54K55pa96Kit44CM44KE44GX44G-44O844KL44CN!5e0!3m2!1sja!2sjp!4v1696744309094!5m2!1sja!2sjp"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="sub-section theme-color medium">
@@ -161,23 +156,19 @@
                                 <td>15:00~15:25</td>
                             </tr>
                             <tr>
-                                <th scope="row">hoge</th>
-                                <td>15:30~15:55</td>
+                                <th scope="row">pheme</th>
+                                <td>15:30~16:25</td>
                             </tr>
                             <tr>
-                                <th scope="row">hoge</th>
-                                <td>16:00~16:25</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">hoge</th>
+                                <th scope="row">Kei Kimura</th>
                                 <td>16:30~16:55</td>
                             </tr>
                             <tr>
-                                <th scope="row">hoge</th>
+                                <th scope="row">hitsujikai</th>
                                 <td>17:00~17:25</td>
                             </tr>
                             <tr>
-                                <th scope="row">hoge</th>
+                                <th scope="row">SAMOTORACK</th>
                                 <td>17:30~17:55</td>
                             </tr>
                             <tr>
@@ -193,7 +184,7 @@
                                 <td>19:00~19:25</td>
                             </tr>
                             <tr>
-                                <th scope="row">hoge</th>
+                                <th scope="row">マクト</th>
                                 <td>19:30~19:55</td>
                             </tr>
                             <tr>
@@ -218,6 +209,7 @@
                 </div>
             </div>
         </div>
+
     </body>
     <footer>
         <div class="footer-credit flex-horizontal">
@@ -225,6 +217,7 @@
                 <p>ビジュアル制作:</p>
                 <p>Jung Jieyun</p>
                 <p>Haruto Tokubo</p>
+                <p>Santa Naruse</p>
                 <br>
                 <p>Web制作:</p>
                 <p>Santa Naruse</p>
