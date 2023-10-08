@@ -484,3 +484,37 @@ footer {
   display: block;
   line-height: 90%;
 }
+
+@media (max-width: 768px) {
+  .title {
+    left: 0vw;
+  }
+
+  .title span {
+    font-size: 1.2rem;
+  }
+
+  .info {
+    left: 0vw;
+  }
+
+  .info p {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    right: 0vw;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .keyvisual-performer {
+    right: 0vw;
+  }
+
+  .keyvisual-performer a {
+    font-size: 0.9rem;
+  }
+}
