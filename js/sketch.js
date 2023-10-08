@@ -6,7 +6,10 @@ let jNum = [];
 let randArray = [];
 let lineNum = 6;
 
-const speed = 0.2;
+let divideXvalue = 10;
+let divideYvalue = 40;
+
+let speed = 0.2;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -20,16 +23,17 @@ function setup() {
 
 function draw() {
   window.onresize = () => resizeCanvas(windowWidth, windowHeight);
-  //background('rgba(0,0,0,0.0)');
+  if (windowWidth < 768) {
+    divideYvalue = 100;
+  } else {
+    divideYvalue = 40;
+  }
+  let cycleLen = width / divideXvalue;
   background(60);
 
 
   for (j = 0; j < height; j += height / lineNum) {
     // 一周期の波形を描画
-    let divideXvalue = 10;
-    let divideYvalue = 40;
-    let cycleLen = width / divideXvalue;
-
     // easing
     const firstPlusRatio = map(frameCount % (403 / speed), 0, 100 / speed, cycleLen / 4, cycleLen / 2);
     const firstPlusLinear = ease.linear(firstPlusRatio);
